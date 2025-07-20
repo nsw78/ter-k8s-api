@@ -28,77 +28,68 @@ Para entender a organização, consulte o arquivo detalhado de estrutura: [docs/
 ```
 ├───.vscode
 ├───docs
-│   │   detail_structure.md
-│   │
-│   └───.
+│       detalif_structure.md
+│
 ├───infra
-│   └───opentofu
-│       │   .opentofu.lock.hcl
+│   └───terraform
+│       │   .terraform.lock.hcl
 │       │   main.tf
-│       │   opentofu.tfstate
-│       │   opentofu.tfstate.backup
+│       │   terraform.tfstate
+│       │   terraform.tfstate.backup
 │       │
-│       ├───.opentofu
+│       ├───.terraform
 │       │   ├───modules
-│       │   │   │   modules.json
-│       │   │   │
-│       │   │   └───.
+│       │   │       modules.json
+│       │   │
 │       │   └───providers
 │       │       ├───registry.opentofu.org
 │       │       │   └───hashicorp
 │       │       │       ├───helm
 │       │       │       │   └───3.0.2
 │       │       │       │       └───windows_amd64
-│       │       │       │           │   CHANGELOG.md
-│       │       │       │           │   CHANGELOG_GUIDE.md
-│       │       │       │           │   LICENSE
-│       │       │       │           │   README.md
-│       │       │       │           │   opentofu-provider-helm.exe
-│       │       │       │           │
-│       │       │       │           └───.
+│       │       │       │               CHANGELOG.md
+│       │       │       │               CHANGELOG_GUIDE.md
+│       │       │       │               LICENSE
+│       │       │       │               README.md
+│       │       │       │               terraform-provider-helm.exe
+│       │       │       │
 │       │       │       ├───kubernetes
 │       │       │       │   └───2.37.1
 │       │       │       │       └───windows_amd64
-│       │       │       │           │   CHANGELOG.md
-│       │       │       │           │   CHANGELOG_GUIDE.md
-│       │       │       │           │   LICENSE
-│       │       │       │           │   README.md
-│       │       │       │           │   opentofu-provider-kubernetes.exe
-│       │       │       │           │
-│       │       │       │           └───.
+│       │       │       │               CHANGELOG.md
+│       │       │       │               CHANGELOG_GUIDE.md
+│       │       │       │               LICENSE
+│       │       │       │               README.md
+│       │       │       │               terraform-provider-kubernetes.exe
+│       │       │       │
 │       │       │       └───null
 │       │       │           └───3.2.4
 │       │       │               └───windows_amd64
-│       │       │                   │   CHANGELOG.md
-│       │       │                   │   LICENSE
-│       │       │                   │   README.md
-│       │       │                   │   opentofu-provider-null.exe
-│       │       │                   │
-│       │       │                   └───.
+│       │       │                       CHANGELOG.md
+│       │       │                       LICENSE
+│       │       │                       README.md
+│       │       │                       terraform-provider-null.exe
+│       │       │
 │       │       └───registry.terraform.io
 │       │           └───hashicorp
 │       │               └───aws
 │       │                   └───5.100.0
 │       │                       └───windows_amd64
-│       │                           │   LICENSE.txt
-│       │                           │   opentofu-provider-aws_v5.100.0_x5.exe
-│       │                           │
-│       │                           └───.
+│       │                               LICENSE.txt
+│       │                               terraform-provider-aws_v5.100.0_x5.exe
 │       │
 │       ├───environments
 │       │   ├───dev
 │       │   ├───prod
 │       │   └───stage
-│       │
 │       └───modules
 │           ├───argocd
-│           │   │   main.tf
-│           │   │   outputs.tf
-│           │   │   values.yaml
-│           │   │   variables.tf
-│           │   │   version.tf
-│           │   │
-│           │   └───.
+│           │       main.tf
+│           │       outputs.tf
+│           │       values.yaml
+│           │       variables.tf
+│           │       version.tf
+│           │
 │           ├───fastapi-api
 │           │   │   main.tf
 │           │   │   outputs.tf
@@ -106,9 +97,7 @@ Para entender a organização, consulte o arquivo detalhado de estrutura: [docs/
 │           │   │   version.tf
 │           │   │
 │           │   └───ingress
-│           │       │   main.tf
-│           │       │
-│           │       └───.
+│           │           main.tf
 │           │
 │           └───monitoring
 │               │   main.tf
@@ -118,16 +107,13 @@ Para entender a organização, consulte o arquivo detalhado de estrutura: [docs/
 │               │   version.tf
 │               │
 │               └───chart
-│
 ├───kubernetes
-│   │   deployment.yaml
-│   │   service.yaml
-│   │
-│   └───.
+│       deployment.yaml
+│       service.yaml
+│
 ├───scripts
-│   │   install-opentofu.ps1
-│   │
-│   └───.
+│       install-opentofu.ps1
+│
 └───src
     │   database.py
     │   requirements.txt
@@ -141,36 +127,26 @@ Para entender a organização, consulte o arquivo detalhado de estrutura: [docs/
     │   │   │   models.py
     │   │   │
     │   │   └───__pycache__
-    │   │       │   client.cpython-313.pyc
-    │   │       │
-    │   │       └───.
+    │   │           client.cpython-313.pyc
     │   │
     │   ├───static
     │   │   └───css
-    │   │       │   style.css
-    │   │       │
-    │   │       └───.
+    │   │           style.css
     │   │
     │   ├───templates
-    │   │   │   about.html
-    │   │   │   base.html
-    │   │   │   clients.html
-    │   │   │   index.html
-    │   │   │
-    │   │   └───.
+    │   │       about.html
+    │   │       base.html
+    │   │       clients.html
+    │   │       index.html
     │   │
     │   └───__pycache__
-    │       │   main.cpython-313.pyc
-    │       │   __init__.cpython-313.pyc
-    │       │
-    │       └───.
+    │           main.cpython-313.pyc
+    │           __init__.cpython-313.pyc
     │
     ├───tests
     └───__pycache__
-        │   database.cpython-313.pyc
-        │   security.cpython-313.pyc
-        │
-        └───.
+            database.cpython-313.pyc
+            security.cpython-313.pyc
 ```
 
 -----
