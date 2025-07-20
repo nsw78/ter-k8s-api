@@ -1,0 +1,16 @@
+# kubectl apply -f kubernetes/service.yaml
+
+# kubernetes/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-app-service
+spec:
+  type: NodePort
+  selector:
+    app: fastapi-app
+  ports:
+    - protocol: TCP
+      port: 80 # Porta do serviço dentro do cluster (pode ser 80, 8000 ou qualquer outra)
+      targetPort: 8000 # <--- MUITO IMPORTANTE: Esta é a porta que seu aplicativo FastAPI escuta dentro do contêiner (FastAPI padrão é 8000)
+      nodePort: 30007 # Porta exposta no seu host (computador). Você acessará via http://localhost:30007

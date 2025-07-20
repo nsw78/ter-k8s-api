@@ -1,0 +1,178 @@
+/* src/api/static/css/style.css */
+
+/* Reset básico para consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Um cinza claro suave */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fique no fim da página */
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background-color: #2c3e50; /* Azul escuro */
+    color: #ecf0f1; /* Cinza claro */
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db; /* Azul vibrante no hover */
+}
+
+/* --- Conteúdo Principal --- */
+main {
+    flex: 1; /* Faz o main ocupar o espaço restante */
+    padding: 2rem 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2em;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.6em;
+}
+
+/* --- Formulários --- */
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button[type="submit"] {
+    background-color: #2ecc71; /* Verde esmeralda */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #27ae60; /* Verde mais escuro no hover */
+}
+
+/* --- Mensagens de Erro --- */
+.error {
+    color: #e74c3c; /* Vermelho forte */
+    background-color: #fcebeb; /* Fundo vermelho claro */
+    border: 1px solid #e74c3c;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* --- Links de Navegação Interna (ex: "Ver Clientes") --- */
+.container p a {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #3498db; /* Azul vibrante */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.container p a:hover {
+    color: #2980b9; /* Azul mais escuro no hover */
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #34495e; /* Azul acinzentado */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Empurra o rodapé para baixo */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a página de listagem de clientes (clients.html) */
+.client-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.client-list th, .client-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.client-list th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+.client-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.client-list tr:hover {
+    background-color: #f1f1f1;
+}
+
+.client-list h1 {
+    margin-bottom: 1rem;
+}

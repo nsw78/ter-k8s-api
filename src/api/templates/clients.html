@@ -1,0 +1,33 @@
+{# src/templates/clients.html #}
+{% extends "base.html" %}
+
+{% block title %}Clientes Cadastrados{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Clientes Cadastrados</h1>
+        <table class="client-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td>{{ client.id }}</td>
+                    <td>{{ client.name }}</td> {# Aqui ele deve mostrar o nome #}
+                    <td>{{ client.email }}</td> {# Aqui ele deve mostrar o e-mail #}
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3">Nenhum cliente cadastrado ainda.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><a href="/">Voltar para o cadastro</a></p>
+    </div>
+{% endblock %}

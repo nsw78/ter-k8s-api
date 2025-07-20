@@ -1,0 +1,19 @@
+# infra/terraform/modules/argocd/values.yaml
+# Valores para configurar o helm chart do argo-cd
+
+# Configura o serviço do servidor Argo CD para NodePort
+server:
+  service:
+    type: NodePort # O tipo de serviço já é NodePort.
+    # A porta específica (nodePort) será definida dinamicamente
+    # via 'set' no arquivo main.tf para evitar interpolações inválidas aqui.
+    # Para desenvolvimento, pode ser útil habilitar a API no localhost
+    # Pode precisar de outras configurações para acesso externo seguro
+
+# Para economizar recursos, você pode ajustar as réplicas e recursos
+# controller:
+#   replicas: 1
+# repoServer:
+#   replicas: 1
+# applicationSet:
+#   replicas: 1

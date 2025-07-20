@@ -1,0 +1,100 @@
+# .gitignore
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Docker
+*.dockerignore
+*.container-cache
+
+# Logs
+*.log
+log/
+tmp/
+
+# Dados de teste e desenvolvimento
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Terraform
+.terraform/
+*.tfplan
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars.json
+override.tf
+override.tf.json
+*.override.tf
+*.override.tf.json
+.terraformrc
+terraform.rc
+
+# VS Code
+.vscode/*.log
+.vscode/*.backup
+.vscode/*.code-workspace
+.vscode/extensions.json # Pode ser versionado se houver extensões recomendadas
+.vscode/*.suo
+.vscode/tasks.json # Pode ser versionado
+.vscode/launch.json # Pode ser versionado
+.vscode/settings.json # Pode ser versionado, mas cuidado com segredos
+
+# Outros
+*.DS_Store
+Thumbs.db
+
+# .pem e .key
+*.pem
+*.zip
+*.key
+*.key.pem   
+# Arquivos de configuração sensíveis
+*.env   
+# Arquivos de configuração do editor
+*.sublime-project
+*.sublime-workspace
+*.tmPreferences
+*.tmProperties      
+# Arquivos de configuração do sistema
+*.swp   
+# Arquivos de cache
+.cache/ 
+# Arquivos de backup
+*.bak   
+# Arquivos temporários
+*.tmp
+# Arquivos de log       
+*.log
+# Arquivos de banco de dados
+*.sqlite
+*.db
+# Arquivos de configuração do sistema operacional
+*.DS_Store
+# Arquivos de configuração do Python
+*.pyc
+*.pyo
+# Arquivos de configuração do Node.js
+node_modules/
+# Arquivos de configuração do Ruby
+*.gem
+# Arquivos de configuração do Go
+*.go
+# Arquivos de configuração do Rust
+*.rs
+# Arquivos de configuração do Java
+*.class
+# Arquivos de configuração do C#

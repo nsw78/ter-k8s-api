@@ -1,0 +1,25 @@
+# Requirements for the FastAPI application
+# This file is used to install the necessary packages for the application.
+fastapi
+uvicorn[standard]
+jinja2
+pydantic
+# Additional dependencies for database and validation
+sqlalchemy
+email-validator
+# JWT authentication
+# python-jose[cryptography]   
+# passlib[bcrypt]
+
+# pydantic is already included above, but can be specified again if needed
+pydantic-settings
+
+# gunicorn is used as the ASGI server
+gunicorn
+
+# python-multipart is used for handling file uploads
+python-multipart
+
+
+
+ 

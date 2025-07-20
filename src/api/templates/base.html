@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Site FastAPI{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    {# Este bloco é para adicionar CSS extra ou meta tags específicas de uma página #}
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home (Cadastrar Cliente)</a></li>
+                <li><a href="/clients">Ver Clientes</a></li>
+                <li><a href="/about">Sobre Nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {# Este é o bloco onde o conteúdo principal de cada página será inserido #}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu Site de Clientes. Todos os direitos reservados.</p>
+    </footer>
+
+    {# Este bloco é para adicionar scripts JavaScript extras no final do body #}
+    {# Exemplo: <script src="{{ url_for('static', path='js/main.js') }}"></script> #}
+    {% block scripts_extra %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+# infra/terraform/modules/monitoring/values.yaml
+# Valores específicos para configurar o helm chart do kube-prometheus-stack
+
+# Reduzimos algumas coisas para ser mais leve no ambiente local
+# Para produção, a configuração seria mais detalhada.
+
+# Desabilita componentes que consomem muitos recursos ou não são necessários localmente
+alertmanager:
+  enabled: false # Desabilita o Alertmanager para economizar recursos
+prometheus:
+  prometheusSpec:
+    # Aumentar o limite de memória e CPU pode ser necessário, mas para iniciar, vamos manter baixo.
+    # resources:
+    #   requests:
+    #     cpu: 100m
+    #     memory: 200Mi
+    #   limits:
+    #     cpu: 200m
+    #     memory: 400Mi
+    retention: 1d # Retenção de dados menor para economizar espaço
+    storageSpec: # Usa um volume temporário local, não persistente
+      emptyDir: {}
+
+grafana:
+  enabled: true
+  adminPassword: pass # Senha de administrador do Grafana (MUDAR EM PRODUÇÃO!)
+  service:
+    type: NodePort
+    # nodePort: ${grafana_service_node_port} # Usa a NodePort definida na variável do Tofu
+    targetPort: 3000 # Porta interna do Grafana
+    port: 80 # Porta do serviço Grafana dentro do cluster
+  # Outras configurações do Grafana

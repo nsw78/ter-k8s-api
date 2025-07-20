@@ -1,0 +1,29 @@
+# kubectl apply -f kubernetes/deployment.yaml
+
+
+# kubernetes/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-app-deployment
+  labels:
+    app: fastapi-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-app
+  template:
+    metadata:
+      labels:
+        app: fastapi-app
+    spec:
+      containers:
+        - name: fastapi-app-container
+          image: my-fastapi-app:latest
+          imagePullPolicy: IfNotPresent # <--- ADICIONE ESTA LINHA!
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: "sqlite:///./sql_app.db"
